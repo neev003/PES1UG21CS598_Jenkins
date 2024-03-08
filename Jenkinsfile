@@ -5,7 +5,7 @@ pipeline {
       steps {
         script {
           // Assuming "PES1UG21CS598-1" is a Jenkins job name, you should trigger it instead of just calling build
-          build "PES1UG21CS598-1"
+          build "PES1UG21CS598-9"
           sh 'g++ sumn.cpp -o output'
         }
       }
