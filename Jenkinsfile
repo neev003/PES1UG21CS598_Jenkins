@@ -3,8 +3,11 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        build "PES1UG21CS598-1"
-        sh 'g++ sumn.cpp -o output'
+        script {
+          // Assuming "PES1UG21CS598-1" is a Jenkins job name, you should trigger it instead of just calling build
+          build job: "PES1UG21CS598-1"
+          sh 'g++ sumn.cpp -o output'
+        }
       }
     }
     stage('Test') {
@@ -18,8 +21,8 @@ pipeline {
       }
     }
   }
-  post{
-    failure{
+  post {
+    failure {
       error 'Pipeline Failed'
     }
   }
